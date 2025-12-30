@@ -1,0 +1,36 @@
+/* 🔹 External CSS */
+
+body {
+    background-color: #f5f7fa;
+    margin: 40px;
+}
+
+#mainTitle {
+    font-family: Georgia;
+    font-size: 32px;
+    color: darkblue;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.photo {
+    width: 180px;
+    height: 180px;
+    border: 3px solid darkblue;
+    border-radius: 15px;
+    display: block;
+    margin: 20px auto;
+}
+
+.personal-info {
+    font-family: Verdana;
+    line-height: 1.8;
+    text-transform: capitalize;
+}
+
+.skills-list,
+.project-list,
+.hobby-list,
+.achievement-list {
+    line-height: 1.7;
+}
