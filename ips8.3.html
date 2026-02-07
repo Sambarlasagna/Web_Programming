@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="number" id="i" placeholder="Initial Budget"><br><br>
+<input type="number" id="e1" placeholder="Expense 1"><br><br>
+<input type="number" id="e2" placeholder="Expense 2"><br><br>
+<button onclick="calculateR()">Calculate</button>
+
+<p id="out"></p>
+
+<script>
+function calculateR() {
+  let I = parseFloat(document.getElementById("i").value);
+  let E1 = parseFloat(document.getElementById("e1").value);
+  let E2 = parseFloat(document.getElementById("e2").value);
+
+  let totalExp = E1 + E2;
+  let T = totalExp * 0.05;
+  let R = I - (totalExp + T);
+
+  document.getElementById("out").innerText = R.toFixed(0);
+}
+</script>
+
+</body>
+</html>

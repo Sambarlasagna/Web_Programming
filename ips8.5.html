@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="code" placeholder="Enter Coupon Code"><br><br>
+<button onclick="check()">Check</button>
+
+<script>
+function check() {
+  let code = document.getElementById("code").value;
+  let sum = 0;
+
+  for (let i = 0; i < code.length; i++) {
+    let d = parseInt(code[i]);
+    sum += d * d;
+  }
+
+  if (code.length >= 4 && sum % 2 !== 0)
+    alert("Selected");
+  else
+    alert("Not selected");
+}
+</script>
+
+</body>
+</html>

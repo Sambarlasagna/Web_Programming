@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button id="btn" onmouseover="colorChange()" onclick="makeTable()" style="background:red;color:white;">
+Create Table
+</button><br><br>
+
+<input type="text" id="box" onfocus="focusColor()" onchange="greet()"><br><br>
+
+<div id="out"></div>
+
+<script>
+function makeTable() {
+  let table = document.createElement("table");
+  table.border = "1";
+
+  for (let i = 0; i < 2; i++) {
+    let row = document.createElement("tr");
+    for (let j = 0; j < 2; j++) {
+      let cell = document.createElement("td");
+      cell.innerText = "Cell";
+      row.appendChild(cell);
+    }
+    table.appendChild(row);
+  }
+
+  document.getElementById("out").innerHTML = "";
+  document.getElementById("out").appendChild(table);
+}
+
+function colorChange() {
+  document.getElementById("btn").style.background = "green";
+}
+
+function focusColor() {
+  document.getElementById("box").style.background = "yellow";
+}
+
+function greet() {
+  alert("Hello! Welcome");
+}
+</script>
+
+</body>
+</html>

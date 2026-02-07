@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<select id="shape" onchange="calc()">
+  <option value="">Select shape</option>
+  <option value="ellipse">Ellipse</option>
+  <option value="rectangle">Rectangle</option>
+</select><br><br>
+
+<input type="text" id="a" placeholder="Value 1"><br><br>
+<input type="text" id="b" placeholder="Value 2"><br><br>
+
+<p id="result"></p>
+
+<script>
+function calc() {
+  let shape = document.getElementById("shape").value;
+  let x = parseFloat(document.getElementById("a").value);
+  let y = parseFloat(document.getElementById("b").value);
+
+  if (shape === "ellipse")
+    document.getElementById("result").innerText = "Area = " + (Math.PI * x * y);
+  else if (shape === "rectangle")
+    document.getElementById("result").innerText = "Area = " + (x * y);
+}
+</script>
+
+</body>
+</html>

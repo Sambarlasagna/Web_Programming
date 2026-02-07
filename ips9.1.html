@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button onclick="makeOL()">OL</button>
+<button onclick="makeUL()">UL</button>
+<button onclick="makeDL()">DL</button>
+
+<div id="out"></div>
+
+<script>
+function clear() {
+  document.getElementById("out").innerHTML = "";
+}
+
+function makeOL() {
+  clear();
+  let ol = document.createElement("ol");
+  for (let i = 1; i <= 5; i++) {
+    let li = document.createElement("li");
+    li.innerText = "Item " + i;
+    ol.appendChild(li);
+  }
+  out.appendChild(ol);
+}
+
+function makeUL() {
+  clear();
+  let ul = document.createElement("ul");
+  for (let i = 1; i <= 5; i++) {
+    let li = document.createElement("li");
+    li.innerText = "Item " + i;
+    ul.appendChild(li);
+  }
+  out.appendChild(ul);
+}
+
+function makeDL() {
+  clear();
+  let dl = document.createElement("dl");
+  for (let i = 1; i <= 5; i++) {
+    let dt = document.createElement("dt");
+    let dd = document.createElement("dd");
+    dt.innerText = "Term " + i;
+    dd.innerText = "Description " + i;
+    dl.appendChild(dt);
+    dl.appendChild(dd);
+  }
+  out.appendChild(dl);
+}
+</script>
+
+</body>
+</html>

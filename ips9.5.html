@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="out"></div>
+
+<script>
+let btn = document.createElement("button");
+btn.innerText = "Show Fieldset";
+document.body.appendChild(btn);
+
+btn.addEventListener("click", function () {
+  let fieldset = document.createElement("fieldset");
+  let legend = document.createElement("legend");
+  legend.innerText = "Information";
+
+  fieldset.appendChild(legend);
+  fieldset.innerHTML += "This is a sample fieldset content";
+
+  document.getElementById("out").appendChild(fieldset);
+  btn.disabled = true;
+});
+</script>
+
+</body>
+</html>

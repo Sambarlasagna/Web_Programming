@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Please check all the emotions that apply to you:</p>
+<input type="checkbox" value="Angry">Angry<br>
+<input type="checkbox" value="Sad">Sad<br>
+<input type="checkbox" value="Happy">Happy<br>
+<input type="checkbox" value="Ambivalent">Ambivalent<br><br>
+
+<p>How satisfied were you with our service?</p>
+<input type="radio" name="rate" value="Very satisfied">Very satisfied<br>
+<input type="radio" name="rate" value="Satisfied">Satisfied<br>
+<input type="radio" name="rate" value="Didn't care">Didn't care<br>
+<input type="radio" name="rate" value="Dissatisfied">Dissatisfied<br>
+<input type="radio" name="rate" value="Very dissatisfied">Very dissatisfied<br><br>
+
+<button onclick="show()">Submit</button>
+
+<div id="out"></div>
+
+<script>
+function show() {
+  let emotions = [];
+  document.querySelectorAll('input[type="checkbox"]:checked')
+    .forEach(e => emotions.push(e.value));
+
+  let rating = document.querySelector('input[name="rate"]:checked')?.value || "";
+
+  let div = document.createElement("div");
+  div.innerHTML =
+    "Emotions: " + emotions.join(", ") + "<br>" +
+    "Satisfaction: " + rating;
+
+  document.getElementById("out").innerHTML = "";
+  document.getElementById("out").appendChild(div);
+}
+</script>
+
+</body>
+</html>

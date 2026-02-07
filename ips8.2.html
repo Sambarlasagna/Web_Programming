@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form onsubmit="calculate_GP(); return false;">
+  <input type="number" id="bp" placeholder="Enter Basic Pay"><br><br>
+  <button type="submit">Submit</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+function calculate_GP() {
+  let bp = parseFloat(document.getElementById("bp").value);
+  let da = bp * 0.08;
+  let hra = bp * 0.05;
+  let gp = bp + da + hra;
+
+  let output = "Gross pay " + gp.toFixed(0) + "<br>";
+
+  if (gp <= 25000) {
+    let incentive = gp * 0.01;
+    output += "Incentive " + incentive.toFixed(0);
+  } else {
+    output += "No incentive";
+  }
+
+  document.getElementById("result").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
