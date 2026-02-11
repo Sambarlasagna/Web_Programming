@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="700" height="400" style="border:1px solid black;"></canvas>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+function randomX(max) {
+    return Math.floor(Math.random() * max);
+}
+
+function randomY(max) {
+    return Math.floor(Math.random() * max);
+}
+
+document.addEventListener("keydown", function(e) {
+
+    var key = e.key.toUpperCase();
+
+    if (key === "R") {
+        var x = randomX(canvas.width - 100);
+        var y = randomY(canvas.height - 50);
+        ctx.fillStyle = "orange";
+        ctx.fillRect(x, y, 100, 50);
+    }
+
+    else if (key === "C") {
+        var x = randomX(canvas.width - 80) + 40;
+        var y = randomY(canvas.height - 80) + 40;
+        ctx.beginPath();
+        ctx.arc(x, y, 40, 0, 2 * Math.PI);
+        ctx.stroke();
+    }
+
+    else if (key === "E") {
+        var x = randomX(canvas.width - 120) + 60;
+        var y = randomY(canvas.height - 60) + 30;
+        ctx.beginPath();
+        ctx.ellipse(x, y, 60, 30, 0, 0, 2 * Math.PI);
+        ctx.stroke();
+    }
+
+    else if (key === "L") {
+        var x1 = randomX(canvas.width);
+        var y1 = randomY(canvas.height);
+        var x2 = randomX(canvas.width);
+        var y2 = randomY(canvas.height);
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+    }
+
+    else {
+        ctx.clearRect(0, 0, canvas.width, 40);
+        ctx.font = "18px Arial";
+        ctx.fillStyle = "red";
+        ctx.fillText("Invalid Key Pressed!", 10, 25);
+    }
+
+});
+</script>
+
+</body>
+</html>

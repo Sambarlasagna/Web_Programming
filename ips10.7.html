@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="600" height="400" style="border:1px solid black;"></canvas>
+
+<script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+var drawing = false;
+
+canvas.addEventListener("mousedown", function(e) {
+    drawing = true;
+    var rect = canvas.getBoundingClientRect();
+    ctx.beginPath();
+    ctx.moveTo(e.clientX - rect.left, e.clientY - rect.top);
+});
+
+canvas.addEventListener("mousemove", function(e) {
+    if (drawing) {
+        var rect = canvas.getBoundingClientRect();
+        ctx.lineWidth = 2;
+        ctx.lineCap = "round";
+        ctx.lineTo(e.clientX - rect.left, e.clientY - rect.top);
+        ctx.stroke();
+    }
+});
+
+canvas.addEventListener("mouseup", function() {
+    drawing = false;
+});
+
+document.addEventListener("dblclick", function() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+</script>
+
+</body>
+</html>
